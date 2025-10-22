@@ -1,13 +1,23 @@
 {
-    "name": "tricky-cc-plugins",
-    "owner": {
-        "name": "Col Mack"
-    },
+    "name": "Tricky CC Plugins",
+    "version": "1.0.0",
+    "description": "Custom Claude Code plugins for project bootstrapping and development",
+    "author": "Tricky CDM",
     "plugins": [
         {
             "name": "tricky-cc-core",
+            "version": "1.0.0",
             "source": "./tricky-cc-core",
             "description": "Core plugins for working with Claude Code"
+        },
+        {
+            "name": "react",
+            "version": "1.0.0",
+            "source": "./react",
+            "description": "React frontend development with Vite, TypeScript, ESLint, and Prettier",
+            "dependencies": [
+                "core"
+            ]
         }
     ]
 }
