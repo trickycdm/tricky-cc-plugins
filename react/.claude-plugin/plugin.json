@@ -1,7 +1,7 @@
 {
   "name": "react",
   "version": "1.0.0",
-  "description": "React frontend development plugin with Vite, TypeScript, ESLint, and Prettier",
+  "description": "React development tools with component generation, analysis, and specialized agents",
   "author": "Tricky CDM",
   "license": "MIT",
   "repository": "https://github.com/trickycdm/tricky-cc-plugins",
@@ -10,7 +10,6 @@
   },
   "capabilities": {
     "commands": true,
-    "agents": true,
-    "hooks": true
+    "agents": true
   }
 }
