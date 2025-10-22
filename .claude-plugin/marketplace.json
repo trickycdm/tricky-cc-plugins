@@ -7,9 +7,9 @@
     },
     "plugins": [
         {
-            "name": "tricky-cc-core",
+            "name": "core",
             "version": "1.0.0",
-            "source": "./tricky-cc-core",
+            "source": "./core",
             "description": "Core plugins for working with Claude Code"
         },
         {

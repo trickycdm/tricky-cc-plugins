@@ -1,5 +1,5 @@
 {
-    "name": "tricky-cc-core",
+    "name": "core",
     "description": "Core utils for working with Claude Code",
     "version": "1.0.0",
     "author": {
