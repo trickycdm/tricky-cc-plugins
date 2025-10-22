@@ -1,0 +1,13 @@
+{
+    "name": "tricky-cc-plugins",
+    "owner": {
+        "name": "Col Mack"
+    },
+    "plugins": [
+        {
+            "name": "tricky-cc-core",
+            "source": "./tricky-cc-core",
+            "description": "Core plugins for working with Claude Code"
+        }
+    ]
+}
