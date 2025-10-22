@@ -1,8 +1,10 @@
 {
-    "name": "Tricky CC Plugins",
+    "name": "tricky-cc-plugins",
     "version": "1.0.0",
     "description": "Custom Claude Code plugins for project bootstrapping and development",
-    "author": "Tricky CDM",
+    "owner": {
+        "name": "Tricky CDM"
+    },
     "plugins": [
         {
             "name": "tricky-cc-core",
@@ -14,10 +16,7 @@
             "name": "react",
             "version": "1.0.0",
             "source": "./react",
-            "description": "React frontend development with Vite, TypeScript, ESLint, and Prettier",
-            "dependencies": [
-                "core"
-            ]
+            "description": "React frontend development with Vite, TypeScript, ESLint, and Prettier"
         }
     ]
 }
