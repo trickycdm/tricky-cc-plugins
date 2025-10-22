@@ -71,9 +71,9 @@ The script will:
 1. Clone the template repository
 2. Remove git history and reinitialize
 3. Install project dependencies (npm install)
-4. Add the Tricky CC plugins marketplace
-5. Install the core plugin (MUST be first)
-6. Install the framework-specific plugin
+4. Install the framework-specific plugin (e.g., react)
+
+**Note:** The core plugin and marketplace are already installed since you're using this skill.
 
 ### Step 3: Verify Installation
 
@@ -81,7 +81,7 @@ After the script completes, verify:
 - Project directory was created
 - Template files are present
 - Dependencies were installed
-- Plugins were installed successfully
+- Framework plugin was installed successfully
 - No error messages were displayed
 
 ### Step 4: Inform the User
@@ -112,10 +112,10 @@ Tell the user:
 
 The bootstrap process uses a two-tier plugin system:
 
-1. **Core Plugin** - Provides essential utilities, agents, commands, and hooks for all projects
-2. **Framework Plugin** - Adds framework-specific development tools and workflows
+1. **Core Plugin** - Provides essential utilities, agents, commands, and hooks for all projects (already installed)
+2. **Framework Plugin** - Adds framework-specific development tools and workflows (installed during bootstrap)
 
-**Critical:** The core plugin MUST be installed before any framework plugin.
+**Note:** Since you're using this skill, the core plugin is already installed. The bootstrap script will only install the framework-specific plugin for your new project.
 
 For detailed information about the plugin architecture, see `references/plugin_architecture.md`.
 
@@ -167,17 +167,9 @@ Plus specialized agents:
 
 **Solution:**
 - Verify Claude Code is installed
-- Check that the marketplace was added successfully
-- Ensure the plugin exists in the repository
-- Core plugin must be installed before framework plugins
-
-### Marketplace already added
-
-```
-⚠️  Marketplace may already be added
-```
-
-**Not an error** - The script continues normally if marketplace was previously added.
+- Ensure the framework plugin exists in the marketplace
+- Check network connectivity
+- Try running `claude plugin install react` manually from the project directory
 
 ## Extending for New Frameworks
 

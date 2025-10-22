@@ -6,9 +6,10 @@ This script:
 1. Clones the template repository
 2. Removes git history and reinitializes
 3. Installs dependencies
-4. Adds the Tricky CC plugins marketplace
-5. Installs core plugin
-6. Installs framework-specific plugin (react, node-backend, etc.)
+4. Installs framework-specific plugin (react, node-backend, etc.)
+
+Note: This script assumes the core plugin and marketplace are already
+installed, since you're using this skill from the core plugin.
 """
 
 import os
@@ -91,31 +92,13 @@ def install_dependencies(project_path):
         print("ℹ️  No package.json found, skipping dependency installation")
 
 
-def add_marketplace(project_path):
-    """Add the Tricky CC plugins marketplace."""
-    marketplace_url = "https://github.com/trickycdm/tricky-cc-plugins"
-    
-    # Change to project directory
-    original_cwd = os.getcwd()
-    os.chdir(project_path)
-    
-    try:
-        result = run_command(f'claude-code marketplace add "{marketplace_url}"', check=False)
-        if result.returncode == 0:
-            print(f"✅ Added marketplace: {marketplace_url}")
-        else:
-            print(f"⚠️  Marketplace may already be added or encountered an issue")
-    finally:
-        os.chdir(original_cwd)
-
-
 def install_plugin(plugin_name, project_path):
     """Install a Claude Code plugin."""
     original_cwd = os.getcwd()
     os.chdir(project_path)
     
     try:
-        result = run_command(f'claude-code plugin install {plugin_name}', check=False)
+        result = run_command(f'claude plugin install {plugin_name}', check=False)
         if result.returncode == 0:
             print(f"✅ Installed plugin: {plugin_name}")
             return True
@@ -129,55 +112,47 @@ def install_plugin(plugin_name, project_path):
 def bootstrap_project(project_name, framework, base_path="."):
     """
     Bootstrap a new project with the specified framework.
-    
+
     Args:
         project_name: Name of the project to create
         framework: Framework type (react, node-backend, etc.)
         base_path: Base directory where project will be created
     """
     print(f"\n🚀 Bootstrapping {framework} project: {project_name}\n")
-    
+
     # Check if template exists for this framework
     if framework not in TEMPLATE_REPOS:
         print(f"❌ No template repository configured for framework: {framework}")
         print(f"Available frameworks: {', '.join(TEMPLATE_REPOS.keys())}")
         return False
-    
+
     # Step 1: Clone template repository
     print("📋 Cloning template repository...")
     project_path = clone_template(TEMPLATE_REPOS[framework], project_name, base_path)
     if not project_path:
         return False
-    
+
     # Step 2: Reset git history
     reset_git_history(project_path)
-    
+
     # Step 3: Install dependencies
     install_dependencies(project_path)
-    
-    # Step 4: Add marketplace
-    print("\n📦 Adding Tricky CC plugins marketplace...")
-    add_marketplace(project_path)
-    
-    # Step 5: Install core plugin (must be first)
-    print("\n🔧 Installing core plugin...")
-    if not install_plugin("core", project_path):
-        print("❌ Failed to install core plugin. Aborting.")
-        return False
-    
-    # Step 6: Install framework-specific plugin
+
+    # Step 4: Install framework-specific plugin
     print(f"\n⚛️  Installing {framework} plugin...")
     if not install_plugin(framework, project_path):
         print(f"❌ Failed to install {framework} plugin.")
+        print(f"💡 You can try installing it manually: cd {project_name} && claude plugin install {framework}")
         return False
-    
+
     print(f"\n✅ Project '{project_name}' bootstrapped successfully!")
     print(f"📁 Location: {project_path.absolute()}")
+    print(f"\n📝 Note: Core plugin is already available (you're using it now!)")
     print(f"\nNext steps:")
     print(f"  1. cd {project_name}")
-    print(f"  2. Run 'claude-code' to start developing")
-    print(f"  3. Check out the Claude Code commands with '/help'")
-    
+    print(f"  2. Run 'claude' to start developing")
+    print(f"  3. Check out the {framework} commands with '/help'")
+
     return True
 
 

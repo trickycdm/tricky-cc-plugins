@@ -14,6 +14,8 @@ This separation gives you the best of both worlds: quick setup from proven templ
 ## Architecture Diagram
 
 ```
+User (already has core plugin installed)
+        ↓
 User Request: "Bootstrap a new React project"
         ↓
 Clone template repo (all the boilerplate)
@@ -22,14 +24,12 @@ Reset git history
         ↓
 Install dependencies (npm install)
         ↓
-Add Claude Code marketplace
-        ↓
-Install core plugin (universal tools)
-        ↓
 Install react plugin (React-specific tools)
         ↓
 Result: Full project + Development superpowers!
 ```
+
+**Note:** The core plugin and marketplace must already be installed to use this bootstrapper skill.
 
 ## Template Repository
 
@@ -95,12 +95,16 @@ Provide framework-specific development tools.
 
 ## Plugin Installation Order
 
-**Critical:** The core plugin MUST be installed before any framework plugins.
+**Context:** Since this bootstrapper is part of the core plugin, users already have:
+- Core plugin installed (provides foundation)
+- Marketplace configured (tricky-cc-plugins)
+
+**During Bootstrap:** Only the framework plugin is installed:
 
 ```
-1. Core plugin     (provides foundation)
+Core plugin (already installed)
         ↓
-2. Framework plugin (builds on core)
+Framework plugin (installed during bootstrap)
 ```
 
 ## Available Frameworks
