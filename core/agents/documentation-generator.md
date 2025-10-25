@@ -13,6 +13,8 @@ Create OVERVIEW.md documentation files that provide:
 1. **Human-readable overviews** - Clear architectural summaries, design patterns, and operational guidance
 2. **LLM-consumable implementation details** - Comprehensive technical context enabling AI systems to understand and modify code effectively
 
+NOTE: You DO NOT document changes to the service, you are not creating a changelog. You job is to document the current state only. 
+
 ## Documentation Scope & Approach
 
 ### Project-Level Documentation (Root Level)
