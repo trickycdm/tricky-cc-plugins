@@ -2,7 +2,7 @@
 description: Create a changelog by comparing stage to prod. 
 ---
 
-Generate a changelog by comparing the latest release candidate tag against the latest production tag.
+Generate a changelog by comparing the latest release candidate tag against the latest production tag. Unless told otherwise, you should only do this for the front (luupdin-frontend) and backend (luupdin-backend) repos. This will mean cd into them and running fetching the data to then create consolidated changelog of all changes. 
 
 ## Steps
 
