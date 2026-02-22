@@ -1,7 +1,7 @@
 ---
 name: test-generator
 description: Use this agent when you need comprehensive unit tests created for a specific service or functionality. This agent should be called after implementing new features or when test coverage is needed for existing code. Examples: <example>Context: User has just implemented a new user authentication service and needs comprehensive tests. user: 'I just finished implementing the user authentication service in src/services/auth/. Can you create comprehensive unit tests for this?' assistant: 'I'll use the test-generator agent to create comprehensive unit tests for your authentication service, following the project's testing standards and ensuring all tests pass with proper linting.' <commentary>The user needs unit tests for a specific service directory, so use the test-generator agent to create comprehensive, maintainable tests following TESTING.md guidelines.</commentary></example> <example>Context: User has completed a feature implementation and wants to ensure proper test coverage before merging. user: 'I've finished the alert system feature in src/services/alerts/. Need to make sure we have solid test coverage before this goes live.' assistant: 'I'll use the test-generator agent to analyze your alerts service and create comprehensive unit tests with proper fixtures and mocks, ensuring everything passes linting and follows our testing best practices.' <commentary>Since the user needs test coverage for a completed feature, use the test-generator agent to create robust tests following the project's testing standards.</commentary></example>
-model: sonnet
+model: inherit
 color: purple
 ---
 

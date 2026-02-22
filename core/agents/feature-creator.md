@@ -1,7 +1,7 @@
 ---
 name: feature-creator
 description: Use this agent when you need to document a feature implementation from the current session into a reusable playbook. This agent should be called after significant progress has been made on a feature and you want to capture the implementation details, context, and references for future sessions. Examples:\n\n<example>\nContext: The user has been working on implementing a new authentication system and wants to document the approach for future reference.\nuser: "We've made good progress on the auth system. Let's create a playbook for this feature"\nassistant: "I'll use the feature-creator agent to document this authentication system implementation into a comprehensive guide"\n<commentary>\nSince the user wants to capture the current implementation work into a reusable guide, use the feature-creator agent to create the OVERVIEW.md file.\n</commentary>\n</example>\n\n<example>\nContext: The user has finished designing a complex data pipeline and needs to document it for the team.\nuser: "Create a playbook for the data pipeline we just built"\nassistant: "Let me launch the feature-creator agent to generate a comprehensive implementation guide for this data pipeline"\n<commentary>\nThe user explicitly asks for a playbook, so use the feature-creator agent to create the documentation.\n</commentary>\n</example>
-model: sonnet
+model: inherit
 color: purple
 ---
 

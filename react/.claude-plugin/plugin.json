@@ -1,8 +1,0 @@
-{
-  "name": "react",
-  "description": "React development tools with component generation, analysis, and specialized agents",
-  "version": "1.0.0",
-  "author": {
-    "name": "Col Mack"
-  }
-}

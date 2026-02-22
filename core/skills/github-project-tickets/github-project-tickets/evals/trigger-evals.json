@@ -1,0 +1,82 @@
+[
+  {
+    "query": "ok so i've been heads down for the past 2 weeks on the luupdin alerts refactor, got about 40 commits. can you look at the git log and push sensible tickets to our github project? its project #3 under the luupdin-dev org",
+    "should_trigger": true
+  },
+  {
+    "query": "i've got a spec doc at ~/docs/q1-features.md that we built out last sprint but never ticketed. can you read it and create issues in github from it, add them to the board as done",
+    "should_trigger": true
+  },
+  {
+    "query": "create tickets from my commits since jan 1st and add them to the roadmap project",
+    "should_trigger": true
+  },
+  {
+    "query": "here's the PRD i've been working from [pastes doc content]. can you turn the completed sections into github issues and add them to project 5",
+    "should_trigger": true
+  },
+  {
+    "query": "we shipped a load of stuff this week but our github project is empty - can you retrospectively add tickets from what's in the git log",
+    "should_trigger": true
+  },
+  {
+    "query": "add these to the board - i've got commits from the auth refactor branch that need to be documented as issues",
+    "should_trigger": true
+  },
+  {
+    "query": "can u log the work we did last month as github tickets? use git log, group related stuff together, mark them all as done on the project",
+    "should_trigger": true
+  },
+  {
+    "query": "i wrote this design doc for the new search feature. we've already built it. can you create github issues from it and add to our project so there's a paper trail",
+    "should_trigger": true
+  },
+  {
+    "query": "push completed work to github project from the last 20 commits on this repo",
+    "should_trigger": true
+  },
+  {
+    "query": "we need to populate our sprint board retrospectively - look at what we merged last week and create tickets",
+    "should_trigger": true
+  },
+  {
+    "query": "can you look at my git log and summarise what i've been working on this week",
+    "should_trigger": false
+  },
+  {
+    "query": "create a new github actions workflow that runs tests on every PR",
+    "should_trigger": false
+  },
+  {
+    "query": "i need to write up some github issues for work we're planning to do next sprint",
+    "should_trigger": false
+  },
+  {
+    "query": "can you review this PR and leave comments",
+    "should_trigger": false
+  },
+  {
+    "query": "help me write a commit message for these changes",
+    "should_trigger": false
+  },
+  {
+    "query": "what does git log --graph do",
+    "should_trigger": false
+  },
+  {
+    "query": "create a github project for our new repo and set up the columns",
+    "should_trigger": false
+  },
+  {
+    "query": "i want to track some bugs we found in testing - can you help me write up github issues for them",
+    "should_trigger": false
+  },
+  {
+    "query": "can you read this spec doc and tell me which features are missing from the codebase",
+    "should_trigger": false
+  },
+  {
+    "query": "set up a github webhook that posts to slack when issues are created",
+    "should_trigger": false
+  }
+]
