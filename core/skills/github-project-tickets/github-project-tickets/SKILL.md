@@ -1,7 +1,6 @@
 ---
 name: github-project-tickets
 description: Create and manage GitHub Project issues retrospectively using the GitHub CLI (gh). Use this skill whenever the user wants to push completed work to a GitHub Project board, create issues from git commit history, generate tickets from documentation or specs, add done work to a GitHub project after the fact, or retrospectively document engineering work as GitHub issues. Triggers on phrases like "add to the project", "create tickets from my commits", "push to github project", "retrospectively log this work", "create issues from git log", "document this work as tickets", "add these to the board", or any request to bridge completed work into a GitHub Project. Also triggers when the user pastes or references a document and wants tickets created from it.
-model: hikau
 ---
 
 # GitHub Project Tickets Skill
