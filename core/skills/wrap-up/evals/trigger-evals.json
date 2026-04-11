@@ -1,0 +1,82 @@
+[
+  {
+    "query": "ok wrap up, we're done with this plan",
+    "should_trigger": true
+  },
+  {
+    "query": "finish up and close out the session",
+    "should_trigger": true
+  },
+  {
+    "query": "let's wrap this up",
+    "should_trigger": true
+  },
+  {
+    "query": "we're done, capture any lessons and finalize",
+    "should_trigger": true
+  },
+  {
+    "query": "close this out and update the plan",
+    "should_trigger": true
+  },
+  {
+    "query": "all steps are done, wrap up the plan",
+    "should_trigger": true
+  },
+  {
+    "query": "finalize the plan and capture what we learned",
+    "should_trigger": true
+  },
+  {
+    "query": "that's everything, let's close out",
+    "should_trigger": true
+  },
+  {
+    "query": "wrap-up",
+    "should_trigger": true
+  },
+  {
+    "query": "done with this task, summarize and close",
+    "should_trigger": true
+  },
+  {
+    "query": "commit these changes",
+    "should_trigger": false
+  },
+  {
+    "query": "create a plan for implementing the search feature",
+    "should_trigger": false
+  },
+  {
+    "query": "review the code I just wrote",
+    "should_trigger": false
+  },
+  {
+    "query": "what's left on the plan",
+    "should_trigger": false
+  },
+  {
+    "query": "update CLAUDE.md with what we learned",
+    "should_trigger": false
+  },
+  {
+    "query": "start working on step 3",
+    "should_trigger": false
+  },
+  {
+    "query": "run the tests",
+    "should_trigger": false
+  },
+  {
+    "query": "summarize what we did today",
+    "should_trigger": false
+  },
+  {
+    "query": "push this branch and create a PR",
+    "should_trigger": false
+  },
+  {
+    "query": "let's re-plan, this approach isn't working",
+    "should_trigger": false
+  }
+]

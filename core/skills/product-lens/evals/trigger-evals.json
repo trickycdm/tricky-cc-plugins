@@ -1,0 +1,82 @@
+[
+  {
+    "query": "is this feature worth building? i'm not sure if anyone actually needs it",
+    "should_trigger": true
+  },
+  {
+    "query": "can you write a spec for the new notifications system",
+    "should_trigger": true
+  },
+  {
+    "query": "this feature is getting way too big, help me cut scope",
+    "should_trigger": true
+  },
+  {
+    "query": "we've got 6 things on the roadmap and can only do 2 this sprint, help me prioritize",
+    "should_trigger": true
+  },
+  {
+    "query": "review the UX flow for our onboarding process",
+    "should_trigger": true
+  },
+  {
+    "query": "what's the MVP for this idea",
+    "should_trigger": true
+  },
+  {
+    "query": "convert this rough idea into a proper spec i can hand to the team",
+    "should_trigger": true
+  },
+  {
+    "query": "there's too much scope creep happening, help me figure out what to cut",
+    "should_trigger": true
+  },
+  {
+    "query": "what should we build next given these constraints",
+    "should_trigger": true
+  },
+  {
+    "query": "i need a product lens on this before we start coding",
+    "should_trigger": true
+  },
+  {
+    "query": "implement the user authentication feature",
+    "should_trigger": false
+  },
+  {
+    "query": "fix the bug where the modal doesn't close on escape",
+    "should_trigger": false
+  },
+  {
+    "query": "write unit tests for the payment service",
+    "should_trigger": false
+  },
+  {
+    "query": "refactor the database queries to use joins instead of N+1",
+    "should_trigger": false
+  },
+  {
+    "query": "review this PR for code quality issues",
+    "should_trigger": false
+  },
+  {
+    "query": "set up CI/CD for the new microservice",
+    "should_trigger": false
+  },
+  {
+    "query": "create a new API endpoint for fetching user profiles",
+    "should_trigger": false
+  },
+  {
+    "query": "update the README with the new setup instructions",
+    "should_trigger": false
+  },
+  {
+    "query": "debug why the deployment is failing on staging",
+    "should_trigger": false
+  },
+  {
+    "query": "add dark mode support to the settings page",
+    "should_trigger": false
+  }
+]

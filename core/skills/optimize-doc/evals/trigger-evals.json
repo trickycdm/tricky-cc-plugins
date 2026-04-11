@@ -1,0 +1,82 @@
+[
+  {
+    "query": "optimize this doc for conciseness",
+    "should_trigger": true
+  },
+  {
+    "query": "this documentation is way too long, tighten it up",
+    "should_trigger": true
+  },
+  {
+    "query": "clean up the redundancy in CLAUDE.md",
+    "should_trigger": true
+  },
+  {
+    "query": "make this markdown file more concise without losing meaning",
+    "should_trigger": true
+  },
+  {
+    "query": "can you optimize docs/CONTRIBUTING.md",
+    "should_trigger": true
+  },
+  {
+    "query": "this skill file has too much repetition, trim it down",
+    "should_trigger": true
+  },
+  {
+    "query": "strengthen the vague instructions in this doc",
+    "should_trigger": true
+  },
+  {
+    "query": "remove the redundancy from this spec",
+    "should_trigger": true
+  },
+  {
+    "query": "this file is bloated, help me cut it down",
+    "should_trigger": true
+  },
+  {
+    "query": "optimize-doc on the error handling standards",
+    "should_trigger": true
+  },
+  {
+    "query": "write documentation for the new API",
+    "should_trigger": false
+  },
+  {
+    "query": "create a README for this project",
+    "should_trigger": false
+  },
+  {
+    "query": "add JSDoc comments to these functions",
+    "should_trigger": false
+  },
+  {
+    "query": "fix the typo in the docs",
+    "should_trigger": false
+  },
+  {
+    "query": "translate this doc to Spanish",
+    "should_trigger": false
+  },
+  {
+    "query": "generate API reference from the codebase",
+    "should_trigger": false
+  },
+  {
+    "query": "review this PR for code quality",
+    "should_trigger": false
+  },
+  {
+    "query": "what does this function do",
+    "should_trigger": false
+  },
+  {
+    "query": "update the changelog with recent changes",
+    "should_trigger": false
+  },
+  {
+    "query": "add a new section to the docs about deployment",
+    "should_trigger": false
+  }
+]

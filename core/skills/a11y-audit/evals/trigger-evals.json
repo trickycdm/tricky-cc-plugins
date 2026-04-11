@@ -1,0 +1,82 @@
+[
+  {
+    "query": "run an accessibility audit on my changed files",
+    "should_trigger": true
+  },
+  {
+    "query": "check if this component is accessible",
+    "should_trigger": true
+  },
+  {
+    "query": "a11y audit the signup form",
+    "should_trigger": true
+  },
+  {
+    "query": "is this WCAG compliant",
+    "should_trigger": true
+  },
+  {
+    "query": "audit these tsx files for screen reader issues",
+    "should_trigger": true
+  },
+  {
+    "query": "check accessibility on src/components",
+    "should_trigger": true
+  },
+  {
+    "query": "does this modal handle focus correctly for keyboard users",
+    "should_trigger": true
+  },
+  {
+    "query": "run a WCAG 2.1 AA check on the staged files",
+    "should_trigger": true
+  },
+  {
+    "query": "are my form inputs properly labeled for accessibility",
+    "should_trigger": true
+  },
+  {
+    "query": "accessibility check before I commit",
+    "should_trigger": true
+  },
+  {
+    "query": "review this PR for code quality",
+    "should_trigger": false
+  },
+  {
+    "query": "add dark mode to the settings page",
+    "should_trigger": false
+  },
+  {
+    "query": "fix the CSS on the navbar",
+    "should_trigger": false
+  },
+  {
+    "query": "write unit tests for the form component",
+    "should_trigger": false
+  },
+  {
+    "query": "refactor this component to use hooks",
+    "should_trigger": false
+  },
+  {
+    "query": "add a loading spinner to the dashboard",
+    "should_trigger": false
+  },
+  {
+    "query": "optimize the bundle size",
+    "should_trigger": false
+  },
+  {
+    "query": "create a new page for user settings",
+    "should_trigger": false
+  },
+  {
+    "query": "what does aria-live do",
+    "should_trigger": false
+  },
+  {
+    "query": "update the color palette in the design tokens",
+    "should_trigger": false
+  }
+]

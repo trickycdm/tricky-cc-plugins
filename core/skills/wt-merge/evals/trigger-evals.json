@@ -1,0 +1,82 @@
+[
+  {
+    "query": "merge this worktree and clean up",
+    "should_trigger": true
+  },
+  {
+    "query": "wt merge",
+    "should_trigger": true
+  },
+  {
+    "query": "done with this worktree, merge it in",
+    "should_trigger": true
+  },
+  {
+    "query": "squash merge the worktree branch and update main",
+    "should_trigger": true
+  },
+  {
+    "query": "merge worktree vigorous-gauss",
+    "should_trigger": true
+  },
+  {
+    "query": "the subagent is done, merge its worktree",
+    "should_trigger": true
+  },
+  {
+    "query": "clean up this worktree and merge the PR",
+    "should_trigger": true
+  },
+  {
+    "query": "i'm done with this branch, merge and clean up",
+    "should_trigger": true
+  },
+  {
+    "query": "merge this branch back into main",
+    "should_trigger": true
+  },
+  {
+    "query": "finish up the worktree and get back to main",
+    "should_trigger": true
+  },
+  {
+    "query": "create a new worktree for this feature",
+    "should_trigger": false
+  },
+  {
+    "query": "list all my worktrees",
+    "should_trigger": false
+  },
+  {
+    "query": "push this branch to origin",
+    "should_trigger": false
+  },
+  {
+    "query": "create a PR for this branch",
+    "should_trigger": false
+  },
+  {
+    "query": "rebase this branch on main",
+    "should_trigger": false
+  },
+  {
+    "query": "switch to the other worktree",
+    "should_trigger": false
+  },
+  {
+    "query": "commit these changes",
+    "should_trigger": false
+  },
+  {
+    "query": "check the CI status on this PR",
+    "should_trigger": false
+  },
+  {
+    "query": "delete the old feature branch",
+    "should_trigger": false
+  },
+  {
+    "query": "what's the status of my PRs",
+    "should_trigger": false
+  }
+]

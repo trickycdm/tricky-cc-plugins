@@ -1,0 +1,82 @@
+[
+  {
+    "query": "generate a changelog for this release",
+    "should_trigger": true
+  },
+  {
+    "query": "what's changed since v2.0.0",
+    "should_trigger": true
+  },
+  {
+    "query": "compare the staging tag against prod and give me release notes",
+    "should_trigger": true
+  },
+  {
+    "query": "what's unreleased on main right now",
+    "should_trigger": true
+  },
+  {
+    "query": "changelog comparing v3.1.0 to v3.0.0",
+    "should_trigger": true
+  },
+  {
+    "query": "i need release notes for what's going out in the next deploy",
+    "should_trigger": true
+  },
+  {
+    "query": "what commits are between rc-20240315 and the latest production tag",
+    "should_trigger": true
+  },
+  {
+    "query": "gen changelog since the last release",
+    "should_trigger": true
+  },
+  {
+    "query": "can you diff the tags and write up what changed",
+    "should_trigger": true
+  },
+  {
+    "query": "create a changelog from our git history for the past release cycle",
+    "should_trigger": true
+  },
+  {
+    "query": "help me write a commit message for these changes",
+    "should_trigger": false
+  },
+  {
+    "query": "can you review this PR and leave comments",
+    "should_trigger": false
+  },
+  {
+    "query": "summarize what i worked on this week from the git log",
+    "should_trigger": false
+  },
+  {
+    "query": "create a new git tag for this release",
+    "should_trigger": false
+  },
+  {
+    "query": "deploy the latest changes to production",
+    "should_trigger": false
+  },
+  {
+    "query": "set up a github actions workflow for releases",
+    "should_trigger": false
+  },
+  {
+    "query": "what does git log --oneline do",
+    "should_trigger": false
+  },
+  {
+    "query": "can you look at my git log and push tickets to the github project",
+    "should_trigger": false
+  },
+  {
+    "query": "revert the last 3 commits on this branch",
+    "should_trigger": false
+  },
+  {
+    "query": "write documentation for the new API endpoints we added",
+    "should_trigger": false
+  }
+]
