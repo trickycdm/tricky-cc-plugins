@@ -175,9 +175,9 @@ tricky-cc-plugins/
 │   ├── agents/               # AI agent definitions
 │   ├── commands/             # Quick commands
 │   ├── skills/               # Automatic capabilities
-│   ├── hooks/                # Workflow automation hooks
-│   ├── scripts/              # Supporting scripts
+│   ├── scripts/              # Supporting scripts (hooks)
 │   ├── docs/                 # Workflow documentation
+│   ├── hooks.json           # Hook configurations
 │   └── README.md            # Detailed plugin documentation
 └── README.md                # This file
 ```

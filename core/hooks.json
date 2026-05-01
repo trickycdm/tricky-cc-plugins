@@ -1,7 +1,9 @@
 {
   "PostToolUse": [
     {
-      "matcher": "Write",
+      "matcher": {
+        "tool": "Write"
+      },
       "hooks": [
         {
           "type": "command",
@@ -10,7 +12,9 @@
       ]
     },
     {
-      "matcher": "Edit",
+      "matcher": {
+        "tool": "Edit"
+      },
       "hooks": [
         {
           "type": "command",

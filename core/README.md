@@ -180,12 +180,12 @@ core/
 │   ├── a11y-audit/
 │   ├── gen-changelog/
 │   └── ...
-├── hooks/                   # Hook configurations
-│   ├── hooks.json          # Hook definitions
-│   └── README.md           # Hook documentation
-└── scripts/                 # Supporting scripts
-    ├── rename-plan.sh      # Plan organization
-    └── statusline.sh       # Custom status line
+├── scripts/                 # Supporting scripts
+│   ├── rename-plan.sh      # Plan organization
+│   └── statusline.sh       # Custom status line
+├── docs/                    # Documentation
+│   └── WORKFLOW_PRINCIPLES.md
+└── hooks.json              # Hook configurations
 ```
 
 ### Customization
