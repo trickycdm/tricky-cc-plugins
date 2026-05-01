@@ -8,12 +8,23 @@ The Core Plugin provides a comprehensive set of tools to supercharge your Claude
 
 ## Installation
 
+### In Claude Code
+
+Install directly with these commands:
+
+```
+/plugin marketplace add trickycdm/tricky-cc-plugins
+/plugin install core@tricky-cc-plugins
+```
+
+### Via Command Line
+
 ```bash
-# Add the marketplace (if not already added)
-claude-code marketplace add https://github.com/trickycdm/tricky-cc-plugins
+# Add the marketplace
+claude marketplace add https://github.com/trickycdm/tricky-cc-plugins
 
 # Install the core plugin
-claude-code plugin install core
+claude plugin install core
 ```
 
 ## Components

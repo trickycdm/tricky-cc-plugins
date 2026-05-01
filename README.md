@@ -12,12 +12,25 @@ A comprehensive suite of productivity tools for Claude Code that implements a st
 
 ## Quick Start
 
+### Installation in Claude Code
+
+Install directly in Claude Code with these commands:
+
+```
+/plugin marketplace add trickycdm/tricky-cc-plugins
+/plugin install core@tricky-cc-plugins
+```
+
+### Alternative Installation
+
+Using the command line:
+
 ```bash
-# Add the plugin marketplace
-claude-code marketplace add https://github.com/trickycdm/tricky-cc-plugins
+# Add the marketplace
+claude marketplace add https://github.com/trickycdm/tricky-cc-plugins
 
 # Install the core plugin
-claude-code plugin install core
+claude plugin install core
 ```
 
 ## Development Workflow
