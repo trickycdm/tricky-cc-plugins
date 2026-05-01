@@ -1,0 +1,22 @@
+{
+  "PostToolUse": [
+    {
+      "matcher": "Write",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "./scripts/rename-plan.sh"
+        }
+      ]
+    },
+    {
+      "matcher": "Edit",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "./scripts/rename-plan.sh"
+        }
+      ]
+    }
+  ]
+}

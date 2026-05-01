@@ -1,6 +1,6 @@
-# Tricky CC Plugins 🚀
+# Tricky CC Plugins
 
-> Professional Claude Code plugin collection with commands, agents, and skills for enhanced development workflows
+> Professional Claude Code plugin collection for enhanced development workflows
 
 [![Version](https://img.shields.io/badge/version-1.0.7-blue.svg)](https://github.com/trickycdm/tricky-cc-plugins)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -8,140 +8,147 @@
 
 ## Overview
 
-**Tricky CC Plugins** is a comprehensive suite of productivity tools for Claude Code that supercharges your development workflow with intelligent automation, code review capabilities, and project management features.
-
-> *"30k lines of production code, not a line typed by hand."* - Built end-to-end with this workflow
-
-### Key Features
-
-- **🤖 Intelligent Agents** - Specialized AI agents for code review, security analysis, documentation generation, and more
-- **⚡ Power Commands** - Streamlined commands for commits, testing, accessibility audits, and changelog generation
-- **🛠️ Development Skills** - Advanced capabilities including Playwright testing, GitHub integration, and document optimization
-- **📦 Easy Installation** - Single command to install the entire plugin suite
-- **🔄 Compounding Workflow** - Every session sharpens the harness, building on lessons learned
+A comprehensive suite of productivity tools for Claude Code that implements a structured development workflow with intelligent automation, code review capabilities, and continuous learning mechanisms.
 
 ## Quick Start
 
-### Prerequisites
-
-- Claude Code desktop application installed
-- Git configured on your system
-- Node.js (for JavaScript/TypeScript projects)
-- Python (for Python-based skills)
-
-### Installation
-
-1. **Add the plugin marketplace**:
-   ```bash
-   claude-code marketplace add https://github.com/trickycdm/tricky-cc-plugins
-   ```
-
-2. **Install the core plugin**:
-   ```bash
-   claude-code plugin install core
-   ```
-
-That's it! You now have access to all commands, agents, and skills.
-
-## What's Included
-
-### 🤖 Agents
-
-Intelligent AI agents that work autonomously on complex tasks:
-
-| Agent | Description | Usage |
-|-------|-------------|-------|
-| **code-reviewer** | Comprehensive code review with best practices | `/agent code-reviewer` |
-| **security-reviewer** | Security vulnerability analysis | `/agent security-reviewer` |
-| **test-generator** | Automatic test creation | `/agent test-generator` |
-| **documentation-generator** | Generate comprehensive docs | `/agent documentation-generator` |
-| **feature-creator** | Implement new features | `/agent feature-creator` |
-| **tech-debt-reviewer** | Identify technical debt | `/agent tech-debt-reviewer` |
-| **claude-md-generator** | Generate CLAUDE.md files | `/agent claude-md-generator` |
-| **code-explorer** | Explore and understand codebases | `/agent code-explorer` |
-
-### ⚡ Commands
-
-Quick commands for common development tasks:
-
-| Command | Description | Usage |
-|---------|-------------|-------|
-| **commit** | Smart git commits with conventional format | `/commit` |
-| **review** | Quick code review | `/review` |
-| **pw-test** | Run Playwright tests | `/pw-test` |
-| **a11y-audit** | Accessibility audit | `/a11y-audit` |
-| **gen-changelog** | Generate changelog | `/gen-changelog` |
-| **product-lens** | Product perspective review | `/product-lens` |
-| **optimize-doc** | Optimize documentation | `/optimize-doc` |
-| **wrap-up** | Session wrap-up and notes | `/wrap-up` |
-| **wt-merge** | Smart merge operations | `/wt-merge` |
-| **warp** | Quick navigation | `/warp` |
-
-### 🛠️ Skills
-
-Advanced capabilities that Claude can use automatically:
-
-- **a11y-audit** - Automated accessibility testing
-- **gen-changelog** - Intelligent changelog generation
-- **github-project-tickets** - GitHub project management
-- **learn** - Learning and knowledge management
-- **optimize-doc** - Document optimization
-- **playwright-cli** - Playwright test automation
-- **product-lens** - Product analysis
-- **wrap-up** - Session management
-- **wt-merge** - Advanced merge operations
-
-## The Development Lifecycle
-
-This plugin suite implements a proven 6-phase development workflow:
-
-**Plan → Build → Review → Test → Learn → Ship**
-
-Each phase has dedicated tools that work together to create a seamless development experience. See [WORKFLOW.md](WORKFLOW.md) for the complete lifecycle.
-
-## Usage Examples
-
-### Complete Feature Workflow
-
 ```bash
-# Phase 1: Plan (handled in plan mode)
-# Phase 2: Build (Claude writes the code)
+# Add the plugin marketplace
+claude-code marketplace add https://github.com/trickycdm/tricky-cc-plugins
 
-# Phase 3: Review - Multi-agent code review
-/review
-# This fans out to 3 specialized agents:
-# - tech-debt-reviewer (maintainability)
-# - code-reviewer (logical bugs)
-# - security-reviewer (attack surface)
-
-# Phase 4: Test
-/agent test-generator    # Generate unit tests
-/pw-test                 # Run Playwright E2E tests
-
-# Phase 5: Learn
-/wrap-up                 # Close the plan, finalize worklog
-/learn                   # Update steering docs with lessons
-
-# Phase 6: Ship
-/commit                  # Smart commit with doc updates
+# Install the core plugin
+claude-code plugin install core
 ```
 
-### Quick Commands
+## Development Workflow
+
+This plugin suite implements a 6-phase development lifecycle:
+
+### 1. Plan → 2. Build → 3. Review → 4. Test → 5. Learn → 6. Ship
+
+Each phase has dedicated tools that work together:
+
+| Phase | Purpose | Key Tools |
+|-------|---------|-----------|
+| **Plan** | Structure complex tasks | Plan mode, auto-organized folders via hooks |
+| **Build** | Implement features | Agents (feature-creator, code-explorer) |
+| **Review** | Ensure quality | `/review` (multi-agent synthesis) |
+| **Test** | Validate behavior | `/pw-test` (explore + generate), `/a11y-audit` |
+| **Learn** | Capture patterns | `/wrap-up`, `/learn` |
+| **Ship** | Deploy changes | `/commit`, `/gen-changelog` |
+
+## Core Components
+
+### Hooks & Automation
+
+Built-in workflow automation:
+- **Plan Organization** - Auto-organizes plans into dated, descriptive folders
+- **Custom Status Line** - Enhanced display with context usage, cost, and git info
+
+### Commands
+
+Quick actions for common tasks:
+
+- `/review` - Multi-agent code review (fans out to 3 specialized reviewers)
+- `/commit` - Smart commits with conventional format and doc updates
+- `/wrap-up` - Finalize plans and capture session outcomes
+- `/learn` - Update steering documentation with lessons learned
+- `/pw-test` - Exploratory testing + E2E test generation with Playwright
+- `/a11y-audit` - Accessibility testing
+- `/plan-status` - Review status of all active plans
+
+[Full command list →](core/README.md#commands)
+
+### Agents
+
+Autonomous AI agents for complex tasks:
+
+- **code-reviewer** - Logical bugs and conventions
+- **tech-debt-reviewer** - Maintainability issues
+- **security-reviewer** - Vulnerability scanning
+- **test-generator** - Comprehensive test creation
+- **feature-creator** - New feature implementation
+
+[Full agent list →](core/README.md#agents)
+
+### Skills
+
+Automatic capabilities that activate when needed:
+
+- **playwright-cli** - Advanced Playwright operations
+- **a11y-audit** - Accessibility compliance
+- **gen-changelog** - Changelog generation
+- **github-project-tickets** - GitHub integration
+
+[Full skills list →](core/README.md#skills)
+
+## Configuration Hierarchy
+
+Claude Code uses a cascading configuration system:
 
 ```bash
-# Quick review of current changes
-/review
+# Organization policy (managed, deployable via MDM)
+/Library/Application Support/ClaudeCode/CLAUDE.md
 
-# Smart commit with conventional format
-/commit
+# User defaults (your preferences, every project)
+~/.claude/CLAUDE.md
+~/.claude/rules/*.md
 
-# Generate changelog from commits
-/gen-changelog
+# Project configuration (team-shared, in repo)
+{project}/CLAUDE.md
+{project}/.claude/rules/*.md
+
+# Directory-specific (service boundaries)
+{project}/src/services/CLAUDE.md
 ```
 
-### Real-World Example: Skill Scan
+Each level inherits from the one above. Keep files under ~200 lines for best adherence.
 
-Built entirely with this workflow - see [EXAMPLES.md](EXAMPLES.md) for detailed case studies.
+## Key Patterns
+
+### Multi-Agent Review
+
+The `/review` command demonstrates parallel agent execution:
+
+```
+     /review
+        │
+    ┌───┴───┐
+    ▼   ▼   ▼
+ tech  code sec
+    └───┬───┘
+        ▼
+   Synthesized
+    Feedback
+```
+
+### Knowledge Capture
+
+The learning loop ensures continuous improvement:
+
+1. `/wrap-up` - Finalizes the current plan
+2. `/learn` - Scans for patterns and updates CLAUDE.md
+3. Future sessions benefit from captured lessons
+
+### Command Composition
+
+Create custom commands that chain existing tools:
+
+```markdown
+# .claude/commands/ship.md
+1. Run /review
+2. If passing, run tests
+3. Run /commit
+4. Push to remote
+```
+
+## Best Practices
+
+1. **Plan complex tasks** - Use plan mode for anything requiring 3+ steps
+2. **Review before shipping** - `/review` catches issues early
+3. **Capture lessons** - End sessions with `/wrap-up` and `/learn`
+4. **Follow the phases** - Each phase builds on the previous
+5. **Keep CLAUDE.md focused** - Under 200 lines, specific patterns only
 
 ## Project Structure
 
@@ -151,183 +158,78 @@ tricky-cc-plugins/
 │   └── marketplace.json      # Plugin marketplace configuration
 ├── core/                     # Core plugin package
 │   ├── .claude-plugin/
-│   │   └── plugin.json       # Core plugin metadata
+│   │   └── plugin.json       # Plugin metadata
 │   ├── agents/               # AI agent definitions
-│   ├── commands/             # Quick command definitions
-│   └── skills/               # Automated skill definitions
-└── plans/                    # Project planning documents
+│   ├── commands/             # Quick commands
+│   ├── skills/               # Automatic capabilities
+│   ├── hooks/                # Workflow automation hooks
+│   ├── scripts/              # Supporting scripts
+│   ├── docs/                 # Workflow documentation
+│   └── README.md            # Detailed plugin documentation
+└── README.md                # This file
 ```
 
-## Configuration
+## Advanced Usage
 
-The plugins work out of the box, but you can customize behavior through the CLAUDE.md hierarchy:
+### Creating Custom Commands
 
-### CLAUDE.md Hierarchy
-
-```bash
-# Managed policy — deployable via MDM, org-wide
-/Library/Application Support/ClaudeCode/CLAUDE.md
-
-# User — your defaults, every project
-~/.claude/CLAUDE.md              # Plan mode, subagents, verification
-~/.claude/rules/*.md             # Personal cross-project rules
-
-# Project — team-shared, in repo
-{project}/CLAUDE.md              # The architecture bible
-{project}/.claude/rules/*.md     # Path-scoped rules
-
-# Directory — service boundaries
-{project}/src/services/CLAUDE.md  # Directory-scoped, loads when editing inside
-```
-
-Each level inherits from the one above. Keep each file under ~200 lines for best adherence.
-
-## Workflow Philosophy
-
-### The Harness Concept
-
-> **"Every session sharpens the harness."**
-
-This isn't just a collection of tools - it's a living workflow that improves with every use:
-
-1. **Start with CLAUDE.md** - Your steering document that guides every decision
-2. **Commands become team verbs** - `/review`, `/commit`, `/deploy` standardize how your team works
-3. **Lessons compound** - `/learn` captures patterns that improve future sessions
-4. **Agents work together** - Complex tasks fan out to specialized sub-agents
-
-### Best Practices
-
-- **Plan first, code second** - Use plan mode for non-trivial tasks
-- **Review always** - `/review` before every commit catches issues early
-- **Learn deliberately** - End sessions with `/wrap-up` and `/learn`
-- **Trust the workflow** - The 6-phase lifecycle works; don't skip steps
-
-## Advanced Patterns
-
-### Multi-Agent Workflows
-
-The `/review` command demonstrates how to fan out work to specialized agents:
-
-```markdown
-# .claude/commands/review.md
-Run these agents in parallel:
-- tech-debt-reviewer: Check for maintainability issues
-- code-reviewer: Find logical bugs and convention violations
-- security-reviewer: Identify security vulnerabilities
-
-Synthesize their outputs into a single review.
-```
-
-### Command Chaining
-
-Commands can trigger other commands for complex workflows:
-
-```markdown
-# .claude/commands/ship.md
-1. Run /review
-2. If review passes, run /commit
-3. Push to remote
-4. Run /wrap-up
-```
-
-### Knowledge Capture
-
-The `/learn` command updates steering docs, not code:
-- Scans session for corrections and validated patterns
-- Filters out one-offs with generalizability gate
-- Writes only to CLAUDE.md and documentation
-- Creates a feedback loop that improves future sessions
-
-## Development
-
-### Decision Matrix: Agent vs Command vs Skill
-
-| Use Case | Choose | Example |
-|----------|--------|---------|
-| Complex multi-step task | Agent | `code-reviewer`, `feature-creator` |
-| Quick single action | Command | `/commit`, `/review` |
-| Automatic capability | Skill | `a11y-audit`, `playwright-cli` |
-| Team-specific workflow | Command | `/deploy`, `/ship` |
-
-### Adding New Commands
-
-Create a new markdown file in `core/commands/`:
+Add markdown files to `core/commands/`:
 
 ```markdown
 ---
-name: my-command
-description: Does something useful
+name: deploy
+description: Deploy to production
 ---
 
-Instructions for Claude on how to execute this command...
+Run deployment checks then push to production
 ```
 
-### Adding New Agents
+### Adding Agents
 
-Create a new markdown file in `core/agents/`:
+Create specialized agents in `core/agents/`:
 
 ```markdown
 ---
-name: my-agent
-description: Specialized agent for X
+name: api-reviewer
+description: Review API design
 ---
 
-You are an expert in X. Your task is to...
+You are an API design expert...
 ```
 
-### Adding New Skills
+### Building Skills
 
-Create a new directory in `core/skills/` with:
-- `SKILL.md` - Skill definition and instructions
+Add directories to `core/skills/` with:
+- `SKILL.md` - Skill definition
 - `scripts/` - Supporting scripts
-- `references/` - Reference documentation
+- `references/` - Documentation
 
 ## Troubleshooting
 
-### Plugin Not Found
+**Commands not recognized**: Ensure plugin is installed with `claude-code plugin list`
 
-If you get a "plugin not found" error:
-```bash
-# Refresh the marketplace
-claude-code marketplace refresh
+**Agents not completing**: Check Claude Code logs and verify latest version
 
-# Try installing again
-claude-code plugin install core
-```
-
-### Commands Not Working
-
-Ensure Claude Code is up to date and restart the application after installation.
+**Skills not activating**: Be specific in requests to trigger appropriate skills
 
 ## Contributing
 
-We welcome contributions! Please:
-
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/trickycdm/tricky-cc-plugins/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/trickycdm/tricky-cc-plugins/discussions)
+- [GitHub Issues](https://github.com/trickycdm/tricky-cc-plugins/issues)
+- [Discussions](https://github.com/trickycdm/tricky-cc-plugins/discussions)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Learn More
-
-- [WORKFLOW.md](WORKFLOW.md) - The complete 6-phase development lifecycle
-- [EXAMPLES.md](EXAMPLES.md) - Real-world case studies and patterns
-- [Core Plugin README](core/README.md) - Detailed documentation for all tools
-
-## Acknowledgments
-
-Built with ❤️ for the Claude Code community by Tricky CDM.
+MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-*Happy coding! 🎉*
+Built with ❤️ for the Claude Code community by Tricky CDM

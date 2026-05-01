@@ -1,5 +1,32 @@
 ---
-description: generate playwirght tests using the CLI and Skill
+description: Exploratory testing with Playwright, then write E2E tests
 ---
 
-Use the Playwright skill and playwright-cli to generate end to end tests that follow our docs/E2E_TESTING.md standards. If this command is invoked without any args, create tests for any pending git changes, or the last committed changes. Otherwise follow the provided user instructions.
+Perform exploratory testing using playwright-cli, then write E2E test files for future automated runs.
+
+## Phase 1: Exploratory Testing
+Use the playwright-cli skill to:
+1. Open browser and navigate to the application
+2. Interact with new/changed features
+3. Verify expected behavior through snapshots
+4. Test edge cases and error states
+5. Document any issues found
+
+## Phase 2: Test Generation
+After confirming behavior:
+1. Write Playwright test files based on the exploration
+2. Follow project E2E testing standards (if docs/E2E_TESTING.md exists)
+3. Include:
+   - Happy path tests
+   - Error handling tests
+   - Accessibility checks
+   - Any edge cases discovered during exploration
+
+## Scope
+- No arguments: Test pending git changes or last commit
+- With arguments: Follow user's specific test requirements
+
+## Output
+- Exploration results summary
+- New test files in appropriate test directory
+- Instructions for running the tests
