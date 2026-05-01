@@ -1,184 +1,254 @@
-# Adding Project Bootstrapper Skill to Core Plugin
+# Core Plugin for Claude Code 🎯
+
+> Essential utilities, agents, commands, and skills for enhanced Claude Code development workflows
 
 ## Overview
 
-The project-bootstrapper skill should be bundled with your **core plugin**. This way, when users install the core plugin, they automatically get the bootstrapping capability.
+The **Core Plugin** is the foundational plugin that provides a comprehensive set of tools to supercharge your Claude Code experience. It includes intelligent agents for code review and analysis, streamlined commands for common tasks, and advanced skills for automation.
+
+## Features
+
+### 🤖 Intelligent Agents
+
+Advanced AI agents that autonomously handle complex development tasks:
+
+- **code-reviewer** - Performs thorough code reviews with actionable feedback
+- **security-reviewer** - Identifies security vulnerabilities and suggests fixes
+- **test-generator** - Automatically generates comprehensive test suites
+- **documentation-generator** - Creates detailed documentation for your codebase
+- **feature-creator** - Implements new features following best practices
+- **tech-debt-reviewer** - Analyzes and reports on technical debt
+- **claude-md-generator** - Generates project-specific CLAUDE.md configuration files
+- **code-explorer** - Helps understand and navigate complex codebases
+
+### ⚡ Quick Commands
+
+Streamlined commands for everyday development tasks:
+
+- **commit** - Smart git commits with conventional commit format
+- **review** - Quick code review for current changes
+- **pw-test** - Execute Playwright tests
+- **a11y-audit** - Run accessibility audits
+- **gen-changelog** - Generate changelogs from git history
+- **product-lens** - Review from a product perspective
+- **optimize-doc** - Optimize documentation files
+- **wrap-up** - Create session summaries and capture lessons learned
+- **wt-merge** - Smart merge operations
+- **warp** - Quick navigation helper
+
+### 🛠️ Development Skills
+
+Automated capabilities that Claude can invoke when needed:
+
+- **a11y-audit** - Automated accessibility testing and reporting
+- **gen-changelog** - Intelligent changelog generation from commits
+- **github-project-tickets** - GitHub project and issue management
+- **learn** - Learning system for capturing and applying lessons
+- **optimize-doc** - Document optimization and improvement
+- **playwright-cli** - Playwright test automation and management
+- **product-lens** - Product-focused analysis and recommendations
+- **wrap-up** - Session management and knowledge capture
+- **wt-merge** - Advanced git merge operations
+
+## Installation
+
+This plugin is installed as part of the Tricky CC Plugins suite:
+
+```bash
+# Add the marketplace (if not already added)
+claude-code marketplace add https://github.com/trickycdm/tricky-cc-plugins
+
+# Install the core plugin
+claude-code plugin install core
+```
+
+## Usage
+
+### Using Agents
+
+Agents handle complex, multi-step tasks autonomously:
+
+```bash
+# Perform a comprehensive code review
+/agent code-reviewer
+
+# Generate tests for your code
+/agent test-generator
+
+# Analyze security vulnerabilities
+/agent security-reviewer
+```
+
+### Using Commands
+
+Commands provide quick access to common tasks:
+
+```bash
+# Create a smart commit
+/commit
+
+# Run accessibility audit
+/a11y-audit
+
+# Generate changelog
+/gen-changelog
+```
+
+### Skills (Automatic)
+
+Skills are automatically invoked by Claude when appropriate. For example:
+- When you ask to "optimize this documentation", the `optimize-doc` skill activates
+- When you request "wrap up this session", the `wrap-up` skill handles it
+- When you need accessibility testing, the `a11y-audit` skill runs automatically
 
 ## Directory Structure
-
-Your core plugin should have this structure:
 
 ```
 core/
 ├── .claude-plugin/
-│   └── plugin.json          # Add "skills": true to capabilities
-├── skills/                  # ← ADD THIS DIRECTORY
-│   └── project-bootstrapper/
-│       ├── SKILL.md
-│       ├── scripts/
-│       │   └── bootstrap_project.py
-│       └── references/
-│           └── plugin_architecture.md
-├── commands/                # Your existing core commands
-├── agents/                  # Your existing core agents
-└── hooks/                   # Your existing core hooks
+│   └── plugin.json          # Plugin configuration
+├── agents/                  # Agent definitions
+│   ├── code-reviewer.md
+│   ├── security-reviewer.md
+│   ├── test-generator.md
+│   └── ...
+├── commands/                # Command definitions
+│   ├── commit.md
+│   ├── review.md
+│   ├── pw-test.md
+│   └── ...
+└── skills/                  # Skill definitions
+    ├── a11y-audit/
+    ├── gen-changelog/
+    ├── playwright-cli/
+    └── ...
 ```
 
-## Installation Steps
+## Configuration
 
-### Step 1: Add Skills Directory to Your Core Plugin
+### Plugin Metadata
 
-```bash
-cd tricky-cc-plugins/core
-
-# Create skills directory if it doesn't exist
-mkdir -p skills
-
-# Copy the project-bootstrapper skill
-cp -r /path/to/skills/project-bootstrapper skills/
-```
-
-### Step 2: Update plugin.json
-
-Add `"skills": true` to your core plugin's capabilities:
+The plugin is configured via `.claude-plugin/plugin.json`:
 
 ```json
 {
-  "name": "core",
-  "version": "1.0.0",
-  "description": "Core utilities, agents, commands, and project bootstrapping",
-  "capabilities": {
-    "commands": true,
-    "agents": true,
-    "hooks": true,
-    "skills": true
-  }
+    "name": "core",
+    "description": "Core utils for working with Claude Code",
+    "version": "2.0.1",
+    "author": {
+        "name": "Col Mack"
+    }
 }
 ```
 
-### Step 3: Commit and Push
+### Customization
+
+You can customize plugin behavior by:
+
+1. **Project-level configuration** - Add a `CLAUDE.md` file to your project root
+2. **Global configuration** - Update `~/.claude/CLAUDE.md` for user-wide settings
+
+## Examples
+
+### Example: Complete Code Review Workflow
 
 ```bash
-git add skills/
-git commit -m "Add project-bootstrapper skill to core plugin"
-git push origin main
+# 1. Quick review of changes
+/review
+
+# 2. Deep security analysis
+/agent security-reviewer
+
+# 3. Generate tests for new code
+/agent test-generator
+
+# 4. Commit with conventional format
+/commit
 ```
 
-### Step 4: Users Install Core Plugin
-
-When users install the core plugin:
+### Example: Documentation Workflow
 
 ```bash
-claude-code marketplace add https://github.com/trickycdm/tricky-cc-plugins
+# 1. Generate initial documentation
+/agent documentation-generator
+
+# 2. Optimize the generated docs
+/optimize-doc
+
+# 3. Generate changelog
+/gen-changelog
+```
+
+### Example: Accessibility Testing
+
+```bash
+# Run comprehensive accessibility audit
+/a11y-audit
+
+# The skill will automatically:
+# - Scan your application
+# - Generate detailed reports
+# - Suggest WCAG-compliant fixes
+```
+
+## Best Practices
+
+1. **Use agents for complex tasks** - Let agents handle multi-step operations
+2. **Use commands for quick actions** - Commands are optimized for speed
+3. **Trust automatic skills** - Claude will invoke skills when appropriate
+4. **Combine tools** - Chain agents and commands for comprehensive workflows
+5. **Review agent output** - Always review generated code and documentation
+
+## Troubleshooting
+
+### Commands not recognized
+
+Ensure the plugin is properly installed:
+```bash
+claude-code plugin list
+```
+
+### Agent not completing tasks
+
+Check Claude Code logs and ensure you have the latest version of both Claude Code and the plugin.
+
+### Skills not activating
+
+Skills activate automatically based on context. Be specific in your requests to trigger the appropriate skill.
+
+## Updates
+
+The plugin is regularly updated with new features and improvements. To update:
+
+```bash
+# Update the plugin
+claude-code plugin update core
+
+# Or reinstall
+claude-code plugin uninstall core
 claude-code plugin install core
 ```
 
-They automatically get:
-- ✅ Core commands and agents
-- ✅ Project bootstrapper skill
-- ✅ Ready to bootstrap projects!
+## Contributing
 
-## How Users Will Use It
+Contributions are welcome! To add new capabilities:
 
-Once the core plugin is installed, users just tell Claude:
+1. **New Agents** - Add `.md` file to `agents/` directory
+2. **New Commands** - Add `.md` file to `commands/` directory
+3. **New Skills** - Create directory structure in `skills/`
 
-```
-Bootstrap a new React project called my-app
-```
+See the main repository README for detailed contribution guidelines.
 
-Claude will:
-1. Recognize the request (skill description triggers it)
-2. Read the SKILL.md instructions
-3. Run the bootstrap_project.py script
-4. Clone template → Install plugins → Ready to code!
+## Support
 
-## Skill Discovery
+For issues, feature requests, or questions:
+- Open an issue on [GitHub](https://github.com/trickycdm/tricky-cc-plugins/issues)
+- Check existing [Discussions](https://github.com/trickycdm/tricky-cc-plugins/discussions)
 
-The skill's description in SKILL.md makes it discoverable:
+## License
 
-```yaml
-description: Bootstrap new development projects by cloning template repositories 
-and installing Claude Code plugins. Use when user requests to create, initialize, 
-set up, or bootstrap a new project for React, Node backend, or other supported 
-frameworks.
-```
+This plugin is part of the Tricky CC Plugins suite and is licensed under the MIT License.
 
-When users say things like:
-- "Bootstrap a new React project"
-- "Set up a React project"
-- "Create a new frontend project"
+---
 
-Claude automatically uses this skill!
-
-## What This Gives You
-
-**Core Plugin now provides:**
-- 🔧 Universal utilities and commands
-- 🤖 Shared agents
-- 🎯 Project bootstrapping capability
-- 📦 One install = Everything users need
-
-**Single installation:**
-```bash
-claude-code plugin install core
-```
-
-Gets users:
-- All core functionality
-- Project bootstrapping
-- Template cloning
-- Plugin orchestration
-
-## Files Included
-
-The `project-bootstrapper` skill includes:
-
-1. **SKILL.md** - Instructions for Claude on how to bootstrap projects
-2. **scripts/bootstrap_project.py** - Python script that does the work
-3. **references/plugin_architecture.md** - Documentation on the system
-
-## Testing
-
-After adding the skill to your core plugin:
-
-```bash
-# Install the core plugin in a test project
-claude-code plugin install core
-
-# Test the skill
-# In Claude Code, say:
-"Bootstrap a new React project called test-app"
-
-# Verify:
-# - Template was cloned
-# - Plugins were installed
-# - Project is ready
-```
-
-## Why Bundle with Core Plugin?
-
-✅ **Single installation** - Users get everything with one plugin
-✅ **Automatic availability** - No separate skill installation needed
-✅ **Logical grouping** - Core plugin = foundational tools
-✅ **Easy distribution** - Through your existing plugin marketplace
-✅ **Version control** - Skill versions with plugin versions
-
-## Updating the Skill
-
-To update the skill:
-
-```bash
-# Edit files in core/skills/project-bootstrapper/
-# Commit and push
-# Users get updates when they update the core plugin
-```
-
-## Next Steps
-
-1. Add the `skills/` directory to your core plugin
-2. Update core plugin's plugin.json
-3. Commit and push to GitHub
-4. Users install/update core plugin
-5. Skill is automatically available!
-
-No separate skill files needed - it's all bundled with the plugin.
+Built with ❤️ by Tricky CDM for the Claude Code community
