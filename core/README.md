@@ -6,6 +6,8 @@
 
 The **Core Plugin** is the foundational plugin that provides a comprehensive set of tools to supercharge your Claude Code experience. It includes intelligent agents for code review and analysis, streamlined commands for common tasks, and advanced skills for automation.
 
+> **Philosophy**: These aren't just tools - they're team verbs. `/review`, `/commit`, and `/deploy` become the shared language of how your team ships code.
+
 ## Features
 
 ### 🤖 Intelligent Agents
@@ -62,7 +64,74 @@ claude-code marketplace add https://github.com/trickycdm/tricky-cc-plugins
 claude-code plugin install core
 ```
 
+## The 6-Phase Development Workflow
+
+This plugin implements a battle-tested development lifecycle:
+
+### Phase 1: Plan
+- Use Claude's plan mode for non-trivial tasks
+- Create structured plans in `plans/` directory
+- Break down complex features into manageable steps
+
+### Phase 2: Build
+- Claude writes the code following your CLAUDE.md
+- Agents handle complex implementations
+- Skills provide automatic capabilities
+
+### Phase 3: Review
+```bash
+/review  # Fans out to 3 specialized agents
+```
+The review command orchestrates:
+- **tech-debt-reviewer** - Maintainability and code smells
+- **code-reviewer** - Logic bugs and convention violations
+- **security-reviewer** - OWASP vulnerabilities and secrets
+
+### Phase 4: Test
+```bash
+/agent test-generator    # Unit tests
+/pw-test                 # E2E tests
+/a11y-audit             # Accessibility
+```
+
+### Phase 5: Learn
+```bash
+/wrap-up    # Close plan, finalize worklog
+/learn      # Update steering docs with lessons
+```
+
+### Phase 6: Ship
+```bash
+/commit     # Smart commit with doc updates
+```
+
 ## Usage
+
+### Complete Feature Example
+
+Here's how the tools work together in practice:
+
+```bash
+# Start with plan mode
+# Claude creates plan in plans/ directory
+
+# Build phase - Claude writes code
+
+# Review phase - comprehensive analysis
+/review
+# Output: Synthesized feedback from 3 agents
+
+# Test phase - multi-layer validation
+/agent test-generator
+/pw-test
+
+# Learn phase - capture knowledge
+/wrap-up
+/learn
+
+# Ship phase
+/commit
+```
 
 ### Using Agents
 
@@ -148,6 +217,48 @@ You can customize plugin behavior by:
 1. **Project-level configuration** - Add a `CLAUDE.md` file to your project root
 2. **Global configuration** - Update `~/.claude/CLAUDE.md` for user-wide settings
 
+## Advanced Patterns
+
+### Multi-Agent Orchestration
+
+The `/review` command demonstrates parallel agent execution:
+
+```markdown
+# How /review works internally:
+1. Reads staged diff
+2. Fans out to 3 agents in parallel:
+   - tech-debt-reviewer
+   - code-reviewer
+   - security-reviewer
+3. Each agent analyzes independently
+4. Main agent synthesizes results
+5. Returns unified review
+```
+
+### Command Composition
+
+Commands can trigger other commands:
+
+```bash
+# The /commit command:
+1. Checks if CLAUDE.md needs updating
+2. Commits code + docs atomically
+3. Formats with Angular conventions
+```
+
+### Knowledge Management
+
+The `/learn` command creates a feedback loop:
+
+```bash
+/learn
+# Scans session for:
+# - Corrections from user
+# - Validated patterns
+# - Generalizable lessons
+# Updates CLAUDE.md, not code
+```
+
 ## Examples
 
 ### Example: Complete Code Review Workflow
@@ -191,6 +302,14 @@ You can customize plugin behavior by:
 # - Suggest WCAG-compliant fixes
 ```
 
+### Example: Session Wrap-up
+
+```bash
+# End of session routine
+/wrap-up    # Finalizes plan, stamps completion
+/learn      # Captures lessons for next time
+```
+
 ## Best Practices
 
 1. **Use agents for complex tasks** - Let agents handle multi-step operations
@@ -198,6 +317,9 @@ You can customize plugin behavior by:
 3. **Trust automatic skills** - Claude will invoke skills when appropriate
 4. **Combine tools** - Chain agents and commands for comprehensive workflows
 5. **Review agent output** - Always review generated code and documentation
+6. **Follow the workflow** - Plan → Build → Review → Test → Learn → Ship
+7. **Capture lessons** - End every session with `/wrap-up` and `/learn`
+8. **Let commands become verbs** - Standardize team workflows around commands
 
 ## Troubleshooting
 
