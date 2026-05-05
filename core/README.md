@@ -24,9 +24,9 @@ Long-running, autonomous workers for complex tasks.
 | `code-reviewer` | Logic bugs, edge cases, convention violations |
 | `security-reviewer` | Vulnerability scanning, unsafe patterns, exposed secrets |
 | `tech-debt-reviewer` | Maintainability, dead code, duplication |
-| `test-generator` | Generates comprehensive test suites |
+| `test-generator` | Runner-agnostic TypeScript unit tests (Jest / Vitest / `node:test`); follows host project's testing standards |
 | `feature-creator` | End-to-end feature implementation |
-| `documentation-generator` | Produces and refines docs |
+| `documentation-generator` | Architectural docs (the "why" / navigation); detects host's doc convention (CLAUDE.md / AGENTS.md / etc.) and updates in place |
 | `claude-md-generator` | Bootstraps CLAUDE.md steering files |
 | `code-explorer` | Codebase navigation and understanding |
 
