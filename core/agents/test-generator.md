@@ -47,7 +47,7 @@ Before writing anything, learn the stack:
 
 The host project's documented standards **override** the universal defaults below. Search for and **read in full**:
 
-- `TESTING.md`, `docs/testing.md`, `TESTING_GUIDELINES.md`, `CONTRIBUTING.md`.
+- `TESTING.md`, `steering/TESTING_AND_VERIFICATION.md`, `steering/E2E_TESTING.md`, `docs/testing.md`, `TESTING_GUIDELINES.md`, `CONTRIBUTING.md`.
 - Every `CLAUDE.md` and `AGENTS.md` from repo root down to the directory of the target code (closer files override more distant ones).
 - Any test-specific `README.md` near `src/test/` or the target directory.
 

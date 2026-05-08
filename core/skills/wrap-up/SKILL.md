@@ -49,6 +49,7 @@ Review the session for patterns worth preserving. Sources to check:
 For each lesson, draft a one-line addition for CLAUDE.md. Apply the bar:
 - **Include**: recurring patterns, mistakes to avoid, discovered conventions, validated approaches
 - **Exclude**: one-off fixes, project-specific trivia, things already documented
+- **Route, don't dump**: if a lesson clearly fits a topic-specific standards file the project already maintains (e.g., an error-handling rule, a database pattern, a security rule), route it there instead of the root CLAUDE.md. `/learn` has the full topology rules — use it for anything beyond a one-line addition.
 
 Present proposed CLAUDE.md additions to the user with a brief "why" for each. Apply only what they approve.
 

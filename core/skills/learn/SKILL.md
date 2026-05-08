@@ -38,6 +38,13 @@ Every project structures its documentation differently. Rather than following a 
 
 The root CLAUDE.md is the master index. It typically points to standards docs, directory-level CLAUDE.md files, and other steering files. Read it to understand the project's documentation topology — what docs exist, what they cover, and how they're organized.
 
+Look specifically for:
+
+- A **Required Reading**-style table that lists steering docs by area. If entries use an `@path` prefix, that prefix tells Claude Code to auto-load the file into context when the relevant area is touched — adding a new steering doc means adding a new row.
+- A `steering/` folder — common home for prescriptive LLM-facing rules.
+- A `docs/` folder — common home for human-facing reference material (project briefs, setup guides, ADRs).
+- Directory-level `CLAUDE.md` files in module folders.
+
 ### Step 2: Identify the right home for each lesson
 
 Based on what you found in Step 1, match each lesson to the most specific existing doc that covers that topic. The hierarchy, from most preferred to least:
@@ -47,14 +54,14 @@ Based on what you found in Step 1, match each lesson to the most specific existi
 3. **Root CLAUDE.md** — for cross-cutting conventions that don't fit a specific module or standards doc (coding conventions, architectural patterns, data fetching)
 4. **Memory** — if the lesson is about user preferences or collaboration style rather than codebase rules, use the memory system instead of docs
 
-For example, a project might have `docs/ERROR_HANDLING.md` for error patterns, or it might just have a section in the root CLAUDE.md. A monorepo might have per-package CLAUDE.md files. Use whatever structure already exists.
+For example, a project might have `steering/ERROR_HANDLING.md` (auto-loaded via the root CLAUDE.md's index), `docs/ERROR_HANDLING.md`, or a section in the root CLAUDE.md. A monorepo might have per-package CLAUDE.md files. Use whatever structure already exists.
 
 ### Step 3: Handle lessons with no clean fit
 
 If a lesson doesn't fit any existing doc:
 
 - Check if the root CLAUDE.md has a general-purpose section (like "Coding Conventions" or "Patterns") where it could go
-- If not, create a minimal catch-all standards file (e.g., `docs/STANDARDS.md` or `docs/CONVENTIONS.md`) and add a pointer to it from the root CLAUDE.md. This is the one exception to the "never create new files" rule — but only for this single catch-all, and only when no existing file is appropriate.
+- If not, create a single catch-all standards file using whichever location the project's root CLAUDE.md already uses for cross-cutting rules. Common locations: `steering/STANDARDS.md` (under a `steering/` folder), `docs/STANDARDS.md` (under a `docs/` folder), or a new section in the root CLAUDE.md itself. Add a pointer from the root CLAUDE.md to the new file. If the root indexes steering docs through an auto-loading table (`@path`-prefixed entries), add a row there too — that's what makes the file load in future sessions. This is the one exception to the "never create new files" rule — but only for this single catch-all, and only when no existing file is appropriate.
 
 ## Process
 
@@ -90,6 +97,7 @@ For docs and CLAUDE.md files:
 - Include a short code example only if it genuinely clarifies the rule — most rules don't need one.
 - Match the existing doc's voice and formatting. Read a few lines of the target doc before writing to absorb its style.
 - Append to the most relevant existing section. Only create a new section if there truly isn't an appropriate home.
+- If you create a new standards file, also add an index entry for it in the root CLAUDE.md (or wherever the project's existing index lives). For projects whose index uses an auto-loading prefix like `@steering/X.md`, mirror that format — otherwise the file won't load in future sessions.
 
 For memory (user preferences / workflow lessons):
 
@@ -121,4 +129,4 @@ Output a short summary:
 - Never duplicate an existing rule. If a lesson is already captured, skip it and say so.
 - If unsure whether something is generalizable, ask the user rather than guessing.
 - Prefer the most specific existing doc over the root CLAUDE.md. A store lesson goes in the store's CLAUDE.md, not the root.
-- Only create a new file as a last resort — a single catch-all standards doc when no existing file fits. Never create topic-specific docs.
+- Only create a new file as a last resort — a single catch-all standards doc when no existing file fits. When you do, register it in the project's index (root CLAUDE.md and any auto-loading table it uses) so it's discoverable in future sessions. Never create topic-specific docs unilaterally.

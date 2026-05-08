@@ -15,7 +15,7 @@ Use the playwright-cli skill to:
 ## Phase 2: Test Generation
 After confirming behavior:
 1. Write Playwright test files based on the exploration
-2. Follow project E2E testing standards (if docs/E2E_TESTING.md exists)
+2. Follow the project's E2E testing standards if it documents them — common locations: `steering/E2E_TESTING.md`, `docs/E2E_TESTING.md`, or a dedicated section in the root `CLAUDE.md`
 3. Include:
    - Happy path tests
    - Error handling tests
