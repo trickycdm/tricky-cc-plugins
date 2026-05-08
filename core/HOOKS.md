@@ -4,7 +4,7 @@ This plugin ships one Claude Code hook: the **rename-plan** hook, which auto-org
 
 ## How it's wired
 
-`hooks/hooks.json` registers a `PostToolUse` hook that runs after every `Write` or `Edit` tool call:
+`hooks/hooks.json` registers a `PostToolUse` hook that runs after every `Write`, `Edit`, or `MultiEdit` tool call:
 
 ```json
 {
@@ -12,7 +12,7 @@ This plugin ships one Claude Code hook: the **rename-plan** hook, which auto-org
   "hooks": {
     "PostToolUse": [
       {
-        "matcher": "Write|Edit",
+        "matcher": "Write|Edit|MultiEdit",
         "hooks": [
           {
             "type": "command",
@@ -28,10 +28,12 @@ This plugin ships one Claude Code hook: the **rename-plan** hook, which auto-org
 What each piece does:
 
 - **`PostToolUse`** — fires after the tool succeeds, so the file already exists on disk when the script runs.
-- **`matcher: "Write|Edit"`** — the `|` is treated as a literal alternation of exact tool names. The hook only fires for those two tools, not for every PostToolUse event.
+- **`matcher: "Write|Edit|MultiEdit"`** — the `|` is a literal alternation of exact tool names. The hook only fires for those three tools, not for every PostToolUse event.
 - **`${CLAUDE_PLUGIN_ROOT}`** — resolves to the plugin's installation directory, so the script works regardless of where the plugin was installed or what the working directory is.
 
-When the plugin is installed via `/plugin marketplace`, this file is registered automatically — no user action needed. The hooks register on plugin enable and unregister on disable.
+When the plugin is installed and enabled via `/plugin marketplace`, this file is registered on the next session start. If you enable the plugin mid-session, run **`/reload-plugins`** to activate the hook without restarting Claude Code. The hook unregisters automatically when the plugin is disabled.
+
+> **Heads-up:** if you also have this script wired in `~/.claude/settings.json` (e.g. from a pre-plugin manual install), the hook will fire twice on each Write/Edit. Remove the user-level entry to let the plugin be the sole source.
 
 ## What the script does
 
